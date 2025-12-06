@@ -12,7 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.github.danilodequeiroz.subscribeplayground.PlayGroundTheme
+import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
+import subscribeplayground.composeapp.generated.resources.Res
+import subscribeplayground.composeapp.generated.resources.label_items
+import subscribeplayground.composeapp.generated.resources.label_loading
 
 @Composable
 fun LoadingList() {
@@ -25,7 +29,7 @@ fun LoadingList() {
         contentPadding = PaddingValues(top = 16.dp)
     ) {
         item {
-            CountHeader(count = 0, labelSingular = "itens", labelPlural = "Carregando...", modifier = Modifier.padding(bottom = 8.dp))
+            CountHeader(count = 0, labelSingular = stringResource(Res.string.label_items), labelPlural = stringResource(Res.string.label_loading), modifier = Modifier.padding(bottom = 8.dp))
         }
 
         items(skeletonItems.size) { 

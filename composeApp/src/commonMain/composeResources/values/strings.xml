@@ -10,6 +10,7 @@
     <string name="tab_following">Following</string>
     <string name="tab_friend">Friend</string>
     <string name="tab_anniversary">Anniversary</string>
+    <string name="tab_blocked">Blocked</string>
 
     <string name="button_following">Following</string>
     <string name="button_follow">Follow</string>
@@ -17,5 +18,18 @@
     <string name="header_friend_count">%d friends</string>
     <string name="header_follower_count">%d followers</string>
     <string name="header_following_count">%d following</string>
+    <string name="label_plural_name">Names</string>
+    <string name="label_singular_name">Name</string>
+    <string name="shimmer_transition">Shimmer Transition</string>
+    <string name="user_photo_content_description">Photo of %s</string>
+    <string name="preview_user_name">User name</string>
+    <string name="preview_sub_name">Sub name</string>
+    <string name="click_me_button">Click me!</string>
+    <string name="compose_greeting">Compose: %s</string>
+    <string name="preview_tab_one">Tab One</string>
+    <string name="preview_title">John Ada Mole</string>
+    <string name="preview_search_text">Maria</string>
+    <string name="label_items">items</string>
+    <string name="label_loading">Loading...</string>
 
 </resources>

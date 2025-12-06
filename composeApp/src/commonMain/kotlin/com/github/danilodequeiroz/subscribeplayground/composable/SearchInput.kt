@@ -20,6 +20,9 @@ import com.github.danilodequeiroz.subscribeplayground.PlayGroundTheme
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import subscribeplayground.composeapp.generated.resources.Res
+import subscribeplayground.composeapp.generated.resources.action_clear_search
+import subscribeplayground.composeapp.generated.resources.action_search
+import subscribeplayground.composeapp.generated.resources.preview_search_text
 import subscribeplayground.composeapp.generated.resources.search_placeholder
 
 @Composable
@@ -36,12 +39,12 @@ fun SearchInput(
             .padding(horizontal = 16.dp, vertical = 8.dp),
         placeholder = { Text(stringResource(Res.string.search_placeholder)) },
         leadingIcon = {
-            Icon(Icons.Filled.Search, contentDescription = "Ícone de Busca")
+            Icon(Icons.Filled.Search, contentDescription = stringResource(Res.string.action_search))
         },
         trailingIcon = {
             if (searchText.isNotEmpty()) {
                 IconButton(onClick = { onSearchTextChanged("") }) {
-                    Icon(Icons.Filled.Close, contentDescription = "Limpar busca")
+                    Icon(Icons.Filled.Close, contentDescription = stringResource(Res.string.action_clear_search))
                 }
             }
         },

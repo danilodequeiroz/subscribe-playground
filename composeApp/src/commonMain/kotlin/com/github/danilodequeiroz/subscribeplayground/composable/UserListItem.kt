@@ -21,9 +21,11 @@ import androidx.compose.ui.unit.dp
 import com.github.danilodequeiroz.subscribeplayground.PlayGroundTheme
 import com.github.danilodequeiroz.subscribeplayground.composable.state.UserActionState
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import subscribeplayground.composeapp.generated.resources.Res
 import subscribeplayground.composeapp.generated.resources.compose_multiplatform
+import subscribeplayground.composeapp.generated.resources.user_photo_content_description
 
 @Composable
 fun UserListItem(
@@ -41,7 +43,7 @@ fun UserListItem(
     ) {
         Image(
             painter = painterResource(resource = Res.drawable.compose_multiplatform),
-            contentDescription = "Foto de $userName",
+            contentDescription = stringResource(Res.string.user_photo_content_description, userName),
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .size(50.dp)
@@ -72,7 +74,7 @@ fun UserListItem(
 fun UserListItem_Preview(){
     PlayGroundTheme {
         UserListItem(
-            profileImageUrl = "",
+            profileImageUrl = "https://i.etsystatic.com/40317824/r/il/339134/4827441773/il_794xN.4827441773_887m.jpg",
             userName = "User name",
             subName = "Sub name",
             actionButtonState = UserActionState.FOLLOW,

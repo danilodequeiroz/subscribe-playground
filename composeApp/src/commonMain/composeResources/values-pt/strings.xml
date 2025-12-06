@@ -10,6 +10,7 @@
     <string name="tab_following">Seguindo</string>
     <string name="tab_friend">Amigo</string>
     <string name="tab_anniversary">Aniversário</string>
+    <string name="tab_blocked">Bloqueado</string>
 
     <string name="button_following">Seguindo</string>
     <string name="button_follow">Seguir</string>
@@ -17,5 +18,18 @@
     <string name="header_friend_count">%d amigos</string>
     <string name="header_follower_count">%d seguidores</string>
     <string name="header_following_count">%d seguindo</string>
+    <string name="label_plural_name">Nomes</string>
+    <string name="label_singular_name">Nome</string>
+    <string name="shimmer_transition">Transição de Brilho</string>
+    <string name="user_photo_content_description">Foto de %s</string>
+    <string name="preview_user_name">Nome do usuário</string>
+    <string name="preview_sub_name">Sub nome</string>
+    <string name="click_me_button">Clique-me!</string>
+    <string name="compose_greeting">Compose: %s</string>
+    <string name="preview_tab_one">Aba Um</string>
+    <string name="preview_title">João da Silva</string>
+    <string name="preview_search_text">Maria</string>
+    <string name="label_items">itens</string>
+    <string name="label_loading">Carregando...</string>
 
 </resources>
