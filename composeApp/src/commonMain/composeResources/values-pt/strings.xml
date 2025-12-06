@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="action_back">Voltar</string>
+    <string name="search_placeholder">Digite para buscar</string>
+    <string name="action_search">Buscar</string>
+    <string name="action_clear_search">Limpar busca</string>
+
+    <string name="tab_follower">Seguidor</string>
+    <string name="tab_following">Seguindo</string>
+    <string name="tab_friend">Amigo</string>
+    <string name="tab_anniversary">Aniversário</string>
+
+    <string name="button_following">Seguindo</string>
+    <string name="button_follow">Seguir</string>
+
+    <string name="header_friend_count">%d amigos</string>
+    <string name="header_follower_count">%d seguidores</string>
+    <string name="header_following_count">%d seguindo</string>
+
+</resources>
