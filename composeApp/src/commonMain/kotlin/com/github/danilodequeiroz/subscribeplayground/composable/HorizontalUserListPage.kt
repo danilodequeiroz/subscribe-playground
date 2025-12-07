@@ -20,7 +20,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 fun HorizontalUserListPage(
     state: PagerState,
     userList: List<UserUIData> = userList(count = 20),
-    onActClick: () -> Unit = { },
+    onUserActionClick: () -> Unit = { },
 ) {
     val tabEntries = MockData.tabUiDataByLangCode(strLangCode = "en")
     val scope = rememberCoroutineScope()
@@ -48,7 +48,7 @@ fun HorizontalUserListPage(
                         userName = "${it.name} ${it.surName}",
                         subName = it.description,
                         actionButtonState = UserActionState.FOLLOW,
-                        onActionClicked = onActClick
+                        onActionClicked = onUserActionClick
                     )
                 }
             }
