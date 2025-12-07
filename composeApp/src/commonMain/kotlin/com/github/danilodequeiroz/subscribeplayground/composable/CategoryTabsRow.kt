@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.PrimaryTabRow
+import androidx.compose.material3.TabRow
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -36,6 +38,18 @@ fun CategoryTabsRow(
     }
     val selectedTab = tabs.firstOrNull { it.apiKey.toString() == selectedKey }
     val keyToSelect = selectedTab?.apiKey ?: tabs.first().apiKey
+//    PrimaryTabRow(
+//        selectedTabIndex = tabs.indexOfFirst { it.apiKey == keyToSelect },
+//        modifier = Modifier.fillMaxWidth()
+//    ){
+//        tabs.forEachIndexed{index, uiData ->
+//            CategoryTab(
+//                label = if (tabs.size == 1) uiData.singularString else uiData.pluralString,
+//                isSelected = (uiData.apiKey == keyToSelect),
+//                onClick = { onTabSelected(uiData) }
+//            )
+//        }
+//    }
     LazyRow(
         modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp),
         contentPadding = PaddingValues(horizontal = 16.dp),

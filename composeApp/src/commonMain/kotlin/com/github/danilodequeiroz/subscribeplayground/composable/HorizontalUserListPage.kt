@@ -7,11 +7,13 @@ import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.PagerState
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import com.github.danilodequeiroz.subscribeplayground.composable.state.UserActionState
-import com.github.danilodequeiroz.subscribeplayground.composable.uidata.TabUiDataRelationType
+import com.github.danilodequeiroz.subscribeplayground.composable.uidata.TabUiData
 import com.github.danilodequeiroz.subscribeplayground.mock.MockData
 import com.github.danilodequeiroz.subscribeplayground.mock.MockData.userList
 import com.github.danilodequeiroz.subscribeplayground.model.UserUIData
+import kotlinx.coroutines.launch
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
@@ -20,11 +22,20 @@ fun HorizontalUserListPage(
     userList: List<UserUIData> = userList(count = 20),
     onActClick: () -> Unit = { },
 ) {
+    val tabEntries = MockData.tabUiDataByLangCode(strLangCode = "en")
+    val scope = rememberCoroutineScope()
     Column {
         CategoryTabsRow(
-            tabs = MockData.tabUiDataByLangCode(strLangCode = "en"),
-            selectedKey = TabUiDataRelationType.friend.toString(),
-            onTabSelected = {}
+            tabs = tabEntries,
+            selectedKey = tabEntries[state.currentPage].apiKey.toString(),
+            onTabSelected = { selectedTab ->
+                scope.launch {
+                    val tabIndex = tabEntries.indexOf(selectedTab)
+                    if (tabIndex != -1) {
+                        state.animateScrollToPage(tabIndex)
+                    }
+                }
+            }
         )
         HorizontalPager(
             state = state,
@@ -48,7 +59,7 @@ fun HorizontalUserListPage(
 @Preview
 @Composable
 fun HorizontalUserListPage_Preview(
-    tabs: List<Any> = listOf(Any(), Any(), Any())
+    tabs: List<TabUiData> = MockData.tabUiDataByLangCode(strLangCode = "en")
 ) {
     val pagerState = rememberPagerState(pageCount = { tabs.size })
     HorizontalUserListPage(
