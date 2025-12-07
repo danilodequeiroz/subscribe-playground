@@ -31,5 +31,6 @@
     <string name="preview_search_text">Maria</string>
     <string name="label_items">itens</string>
     <string name="label_loading">Carregando...</string>
+    <string name="no_category_available">Nenhuma categoria disponível.</string>
 
 </resources>

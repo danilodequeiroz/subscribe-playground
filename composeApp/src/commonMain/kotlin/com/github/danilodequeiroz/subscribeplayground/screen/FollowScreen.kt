@@ -10,6 +10,8 @@ import com.github.danilodequeiroz.subscribeplayground.composable.SearchInput
 import com.github.danilodequeiroz.subscribeplayground.composable.TopBarWithTitleAndBack
 import com.github.danilodequeiroz.subscribeplayground.composable.UserListItem
 import com.github.danilodequeiroz.subscribeplayground.composable.state.UserActionState
+import com.github.danilodequeiroz.subscribeplayground.composable.uidata.TabUiData
+import com.github.danilodequeiroz.subscribeplayground.composable.uidata.TabUiDataRelationType
 import com.github.danilodequeiroz.subscribeplayground.mock.MockData
 import com.github.danilodequeiroz.subscribeplayground.model.UserUIData
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -24,9 +26,9 @@ fun FollowScreen_Preview(
     countHeaderCount: Int = 9,
     countHeaderLabelSingular: String = "Usuario",
     countHeaderLabelPlural: String = "Usuarios",
-    categoryTabs: List<String> = listOf("Seguindo", "Recomendado", "Bloqueado", "Amigos"),
-    categoryTabsSelectedTab: String = "Amigos",
-    categoryTabOnTabSelect: (String) -> Unit = {},
+    categoryTabs: List<TabUiData> = MockData.tabUiDataByLangCode(strLangCode = "pt"),
+    categoryTabsSelectedTab: String = TabUiDataRelationType.following.toString(),
+    categoryTabOnTabSelect: (TabUiData) -> Unit = {},
     userList: List<UserUIData> = MockData.userList(count = 20),
     onActClick: () -> Unit = { },
 ) {
@@ -61,7 +63,7 @@ fun FollowScreen_Preview(
                 item {
                     CategoryTabsRow(
                         tabs = categoryTabs,
-                        selectedTab = categoryTabsSelectedTab,
+                        selectedKey = categoryTabsSelectedTab,
                         onTabSelected = categoryTabOnTabSelect,
                     )
                 }
